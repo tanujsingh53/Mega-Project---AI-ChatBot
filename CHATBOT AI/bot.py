@@ -16,7 +16,7 @@ except ImportError:
     KEYBOARD_AVAILABLE = False
     print("[Info] 'keyboard' package not found. Ctrl+Alt+Q abort won't work unless you install it.")
 
-def is_last_message_from_sender(chat_log, sender_name="Voda"):
+def is_last_message_from_sender(chat_log, sender_name="<Sender's Name>"):
   
     # Split the chat log into individyal messages
     messages = chat_log.strip().split("/2025 ]")[-1]
@@ -91,4 +91,5 @@ while True:
 
       # Step 7: Press Enter
       pyautogui.press("enter")
+
 
