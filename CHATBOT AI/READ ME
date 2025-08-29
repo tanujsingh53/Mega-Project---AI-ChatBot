@@ -1,0 +1,109 @@
+# 🤖 AI Chatbot Automation with PyAutoGUI  
+
+**Chatbot testing & automation made simple with PyAutoGUI.**  
+This project automates the process of selecting, copying, and sending text into a chat interface — ideal for testing AI chatbots, automating repetitive tasks, and boosting productivity.  
+
+---
+
+## 🚀 Features
+- 🖱️ **Automated Mouse Control** – Click, drag, and select text regions with coordinates.  
+- 📋 **Variable Text Handling** – Copy text into a Python variable for reuse.  
+- ⌨️ **Direct Typing** – Type the variable content directly into the chatbox (no clipboard paste).  
+- ⚡ **Lightweight & Flexible** – Works with any chatbox, messaging app, or test interface.  
+
+---
+
+## 💡 Motivation & Use Cases
+This project is designed to **simulate real user behavior** when testing or interacting with chat-based systems.  
+
+- 🤖 **AI Chatbot Testing** – Automate inputs/outputs to validate chatbot responses.  
+- 💬 **Messaging Apps Automation** – Automate sending messages on WhatsApp Desktop, Slack, or MS Teams.  
+- 🧪 **QA Automation** – Reproduce repetitive test scenarios with ease.  
+- 📑 **Workflow Automation** – Copy data from one app and send it into another automatically.  
+- 🎯 **Productivity Boost** – Avoid retyping common queries or commands manually.  
+
+---
+
+## 🛠️ Tech Stack
+- [PyAutoGUI](https://pyautogui.readthedocs.io/) – Mouse/keyboard automation  
+- [Pyperclip](https://pypi.org/project/pyperclip/) – Clipboard handling (optional for capturing text)  
+- Python 3.x  
+
+---
+
+## 📂 Project Workflow
+
+flowchart TD
+    A[Click at target coordinate] --> B[Drag & select text region]
+    B --> C[Copy text using Ctrl+C]
+    C --> D[Store copied text in variable]
+    D --> E[Click chatbox input]
+    E --> F[Type variable content directly]
+    F --> G[Press Enter to send]
+
+    
+📖 Example Script
+python
+Copy code
+import time
+import pyautogui
+import pyperclip
+
+time.sleep(2)  # delay to switch window
+
+# Step 1: Click target area
+pyautogui.click(1127, 1045)
+
+# Step 2: Drag to select text
+pyautogui.moveTo(550, 145)
+pyautogui.dragTo(1892, 936, duration=1, button="left")
+
+# Step 3: Copy selection into variable
+pyautogui.hotkey("ctrl", "c")
+copied_text = pyperclip.paste()
+
+# Step 4: Click chatbox and type variable content
+pyautogui.click(836, 971)
+pyautogui.typewrite(copied_text, interval=0.02)
+
+# Step 5: Send message
+pyautogui.press("enter")
+🔧 Setup
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/your-username/ai-chatbot-automation.git
+cd ai-chatbot-automation
+Install dependencies:
+
+bash
+Copy code
+pip install pyautogui pyperclip
+Run the script:
+
+
+Copy code
+python bot.py
+
+
+⚠️ Notes
+Screen coordinates (x, y) must be adjusted for your screen/app layout.
+
+Ensure the chat window is active before running the script.
+
+PyAutoGUI has a built-in failsafe: move your mouse to the top-left corner to stop the script instantly.
+
+🌟 Future Improvements
+🖼️ OCR integration to capture on-screen text without drag-selection.
+
+🎛️ GUI for setting coordinates dynamically.
+
+🧑‍💻 Expand automation for multiple platforms (Windows/Linux/macOS).
+
+📜 License
+This project is licensed under the MIT License. Feel free to fork, modify, and use it in your own projects.
+
+✨ Happy Automating! 🚀
+
+
