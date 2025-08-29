@@ -1,6 +1,6 @@
 # Mega-Project---AI-ChatBot
 
-his project demonstrates how to automate interactions with a chat interface (or any text input field) using Python’s PyAutoGUI. The script automatically:
+This project demonstrates how to automate interactions with a chat interface (or any text input field) using Python’s PyAutoGUI. The script automatically:
 
 Clicks on a given screen coordinate.
 
